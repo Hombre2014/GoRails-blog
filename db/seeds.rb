@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+100.times do |i|
+  BlogPost.create(title: "Blog Post #{i}", content: "This is the content for Blog Post #{i}", published_at: Time.current - i.days
+  )
+end

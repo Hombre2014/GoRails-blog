@@ -11,3 +11,5 @@
     <p><%= blog_post.content %></p>
   </div>
 <% end %>
+
+<%== @pagy.last < 2 ? '' : pagy_nav(@pagy) %>
