@@ -1,4 +1,5 @@
 class BlogPostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_blog_post, except: [:index, :new, :create] # only: %i[show edit update destroy]
 
   def index
@@ -45,5 +46,7 @@ class BlogPostsController < ApplicationController
 
   def set_blog_post
     @blog_post = BlogPost.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path, status: :not_found
   end
 end
