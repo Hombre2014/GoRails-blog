@@ -2,3 +2,5 @@
 <p><%= @blog_post.body %></p>
 
 <%= link_to "Edit", edit_blog_post_path(@blog_post) if user_signed_in? %>
+<%= button_to "Delete", @blog_post, method: :delete, data: {turbo_confirm: "Are you sure?"} if user_signed_in? %>
+<%= link_to "Back", blog_posts_path %>
