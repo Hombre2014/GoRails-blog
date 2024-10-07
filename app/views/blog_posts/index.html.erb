@@ -12,4 +12,4 @@
   </div>
 <% end %>
 
-<%== pagy_nav(@pagy) %>
+<%== @pagy.last < 2 ? '' : pagy_nav(@pagy) %>
