@@ -2,6 +2,11 @@
 
 <% @blog_posts.each do |blog_post| %>
   <div>
+    <% if blog_post.cover_image.attached? %>
+      <div class="w-64">
+        <%= image_tag blog_post.cover_image %>
+      </div>
+    <% end %>
     <h2><%= link_to blog_post.title, blog_post %></h2>
     <% if blog_post.draft? %>
       <p><em class="p-2 rounded bg-gray-100 text-gray-900">Draft</em></p>
